@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://dcc7ulof2y0se"]
+
+[ext_resource type="Texture2D" uid="uid://dx8npe0575alc" path="res://resources/white.tres" id="2_vm88t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ij1g1"]
+size = Vector2(64, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g58wp"]
+
+[node name="Block" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+metadata/name = "block"
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+shape = SubResource("RectangleShape2D_ij1g1")
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+texture = ExtResource("2_vm88t")
+
+[node name="Down" type="ShapeCast2D" parent="."]
+position = Vector2(0, 48)
+shape = SubResource("RectangleShape2D_g58wp")
+target_position = Vector2(0, 16)

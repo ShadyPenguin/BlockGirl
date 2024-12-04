@@ -1,0 +1,37 @@
+[gd_resource type="TileSet" load_steps=6 format=3 uid="uid://bwxggfu0r5enr"]
+
+[ext_resource type="PackedScene" uid="uid://dcc7ulof2y0se" path="res://scenes/block.tscn" id="1_f31jw"]
+[ext_resource type="PackedScene" uid="uid://cky4r02tjis2x" path="res://scenes/finish.tscn" id="2_bp3o2"]
+[ext_resource type="Texture2D" uid="uid://551cjxw1n4kl" path="res://assets/colors.png" id="2_dde02"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_nagjt"]
+resource_name = "block"
+scenes/1/scene = ExtResource("1_f31jw")
+scenes/2/scene = ExtResource("2_bp3o2")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_18ym7"]
+texture = ExtResource("2_dde02")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+0:0/0/custom_data_1 = true
+1:0/0 = 0
+1:0/0/custom_data_0 = true
+1:0/0/custom_data_1 = true
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+2:0/0/custom_data_1 = true
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+
+[resource]
+tile_size = Vector2i(64, 64)
+physics_layer_0/collision_layer = 1
+custom_data_layer_0/name = "exit"
+custom_data_layer_0/type = 1
+custom_data_layer_1/name = "static"
+custom_data_layer_1/type = 1
+sources/1 = SubResource("TileSetAtlasSource_18ym7")
+sources/0 = SubResource("TileSetScenesCollectionSource_nagjt")

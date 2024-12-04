@@ -1,0 +1,98 @@
+[gd_scene load_steps=12 format=3 uid="uid://ioprlnv1ukc7"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_1hm0r"]
+[ext_resource type="Texture2D" uid="uid://551cjxw1n4kl" path="res://assets/colors.png" id="2_e32tq"]
+[ext_resource type="Texture2D" uid="uid://dx8npe0575alc" path="res://resources/white.tres" id="3_1mbe1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ltucd"]
+atlas = ExtResource("2_e32tq")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bdaro"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_poetb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gmtgc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_grcdj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r16vc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o3w5w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yh6p6"]
+
+[node name="Player" type="Node2D"]
+script = ExtResource("1_1hm0r")
+metadata/_edit_horizontal_guides_ = [0.0]
+metadata/_edit_vertical_guides_ = [0.0]
+metadata/player = true
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_ltucd")
+
+[node name="Camera2D" type="Camera2D" parent="Sprite2D"]
+position = Vector2(0, -104)
+zoom = Vector2(1.4, 1.4)
+
+[node name="AboveLeft" type="ShapeCast2D" parent="."]
+position = Vector2(-64, -64)
+shape = SubResource("RectangleShape2D_bdaro")
+target_position = Vector2(0, -16)
+
+[node name="AboveAboveLeft" type="ShapeCast2D" parent="."]
+position = Vector2(-64, -128)
+shape = SubResource("RectangleShape2D_bdaro")
+target_position = Vector2(0, -16)
+
+[node name="AboveRight" type="ShapeCast2D" parent="."]
+position = Vector2(64, -64)
+shape = SubResource("RectangleShape2D_poetb")
+target_position = Vector2(0, -16)
+
+[node name="AboveAboveRight" type="ShapeCast2D" parent="."]
+position = Vector2(64, -128)
+shape = SubResource("RectangleShape2D_poetb")
+target_position = Vector2(0, -16)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+offset_left = -32.0
+offset_top = -96.0
+offset_right = 32.0
+offset_bottom = -32.0
+texture = ExtResource("3_1mbe1")
+
+[node name="Down" type="ShapeCast2D" parent="."]
+shape = SubResource("RectangleShape2D_gmtgc")
+
+[node name="BelowLeft" type="ShapeCast2D" parent="."]
+position = Vector2(-64, 24)
+shape = SubResource("RectangleShape2D_gmtgc")
+target_position = Vector2(0, 24)
+
+[node name="BelowRight" type="ShapeCast2D" parent="."]
+position = Vector2(64, 24)
+shape = SubResource("RectangleShape2D_grcdj")
+target_position = Vector2(0, 24)
+
+[node name="Left" type="ShapeCast2D" parent="."]
+position = Vector2(-64, 0)
+shape = SubResource("RectangleShape2D_r16vc")
+target_position = Vector2(0, -16)
+
+[node name="Left2" type="ShapeCast2D" parent="."]
+position = Vector2(-64, 0)
+shape = SubResource("RectangleShape2D_r16vc")
+target_position = Vector2(0, -16)
+
+[node name="Above" type="ShapeCast2D" parent="."]
+position = Vector2(0, -64)
+shape = SubResource("RectangleShape2D_o3w5w")
+target_position = Vector2(0, -16)
+
+[node name="Right" type="ShapeCast2D" parent="."]
+position = Vector2(64, 0)
+shape = SubResource("RectangleShape2D_yh6p6")
+target_position = Vector2(0, -16)
